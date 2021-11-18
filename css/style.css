@@ -40,6 +40,19 @@ body {
     font-weight: bold;   
 }
 
+.controls:invalid{
+    border: 2px solid red;
+}
+
+.controls:invalid:required{
+    background: #252323;
+}
+
+.controls:valid{
+    background: #252323;
+    border: 2px solid rgb(30, 155, 30);
+}
+
 .buttons {
     width: 100%;
     height: 40px;
