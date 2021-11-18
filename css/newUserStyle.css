@@ -11,10 +11,10 @@ body {
 
 .form-generic {
     width: 400px;
-    height: 400px;
+    height: 450px;
     margin: 0 auto;
     background: #4e4d4d;
-    margin-top: 180px;
+    margin-top: 120px;
     box-shadow: 7px 13px 37px #000;
     padding: 20px 30px;
     border-top: 4px solid #017bab;
