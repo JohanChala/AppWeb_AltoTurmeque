@@ -10,11 +10,13 @@
 <body>
     <section class="form-generic">
         <h5>Registro de usuario</h5>
-        <input class="controls" type="text" name="nombre" value="" placeholder="Nombre">
-        <input class="controls" type="text" name="email" value="" placeholder="Email">
-        <input class="controls" type="password" name="contraseña" value="" placeholder="Contraseña">
-        <input class="buttons" type="submit" name="registrar" value="Registrar">
-        <p><a href="index.html">Iniciar Sesion</a></p>
+        <input class="controls" type="text" name="nombre" value="" placeholder="Nombre" id="nameUser" required>
+        <input class="controls" type="text" name="email" value="" placeholder="Email" id="emailUser" required>
+        <input class="controls" type="password" name="contraseña" value="" placeholder="Contraseña" id="passwordUser" required>
+        <input class="buttons" type="submit" name="registrar" value="Registrar" id="btnRegistrar">
+        <p><a href="index.html">¿Quieres iniciar sesion?</a></p>
     </section> 
 </body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="js/newUser.js"></script>
 </html>
