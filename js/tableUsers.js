@@ -6,7 +6,6 @@ const del =  'http://152.70.213.228:8080/api/user/delete/'
 
 //Obtnemos los datos desdel el modal
 const modalUser= new bootstrap.Modal(document.getElementById('modalUser'));
-//const formArticulo = document.getElementById('formUser')
 const formArticulo = document.querySelector('#formUser')
 const identificationModal=document.getElementById('identificationUser')
 const nameModal=document.getElementById('nameUser')
@@ -59,7 +58,7 @@ $(document).ready(function () {
         $('#dataUsers').append(body);        
 
     }).catch(function (error) {
-        alert('Error: ' + error);
+        alertify.error('Error al obtener los datos');
         console.log(error);
     });
 });
