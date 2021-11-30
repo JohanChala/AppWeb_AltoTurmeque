@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <!-- CSS -->
+    <link
+      rel="stylesheet"
+      href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"
+    />
+    <!-- Bootstrap theme -->
+    <link
+      rel="stylesheet"
+      href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="css/tableUsers.css" />
+    <title>Administrador de Usarios</title>
+  </head>
+  <body>
+    <section class="form-generic" class="container">
+    <button
+      id="btnCreate"
+      type="button"
+      class="btn btn-primary"
+      data-toggle="modal"> Crear Usuario</button>
+    <br> <br>
+    <!--Tabla de datos-->
+      <table class="table table-dark" id="usersDataTable">
+        <thead>
+          <tr>
+            <th scope="col">id</th>
+            <th scope="col">Nº Identificación</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Dirección</th>
+            <th scope="col">Teléfono</th>
+            <th scope="col">Correo</th>
+            <th scope="col">Zona</th>
+            <th scope="col">Tipo</th>
+            <th scope="col">Acciones</th>
+          </tr>
+        </thead>
+        <tbody id="dataUsers"></tbody>
+      </table>
+    </section>
+
+    <!--Modal Crear o Editar Usuario-->    
+    <div
+      class="modal fade"
+      id="modalUser"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header bg-primary text-white">
+            <h5 class="modal-title" id="exampleModalLabel">Usuario</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form class="was-validated" id="formUser">
+              <div class="form-group">
+                <label for="identificationUser">Nº Identificación</label>
+                <input
+                    type="text"
+                    class="form-control"
+                    id="identificationUser"
+                    name="identificationUser"
+                    placeholder="Nº Identificación"
+                    required
+                />               
+              </div>
+              <div class="form-group">
+                <label for="nameUser">Nombre</label>
+                <input
+                    type="text"
+                    class="form-control"
+                    id="nameUser"
+                    name="nameUser"
+                    placeholder="Nombre"
+                    required
+                />
+              </div>
+              <div class="form-group">
+                <label for="emailUser">Correo Electrónico</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="emailUser"
+                  name="emailUser"
+                  placeholder="Correo Electrónico"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="addressUser">Dirección</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="addressUser"
+                  name="addressUser"
+                  placeholder="Dirección"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="cellphoneUser">Teléfono</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="cellphoneUser"
+                  name="cellphoneUser"
+                  placeholder="Teléfono"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="zoneUser">Zona</label>
+                <select class="form-control" id="zoneUser" required>
+                  <option value="">Seleccione la Zona</option>
+                  <option value="ZONA 1">Comunidad 1 Norte</option>
+                  <option value="ZONA 2">Comunidad 2 Nororiental</option>
+                  <option value="ZONA 3">Comunidad 3 Sanfrancisco</option>
+                  <option value="ZONA 4">Comunidad 4 Occidental</option>
+                  <option value="ZONA 5">Comunidad 5 Garcia Rovira</option>
+                  <option value="ZONA 6">Comunidad 6 La Concordia</option>
+                  <option value="ZONA 7">Comunidad 7 La Ciudadela</option>
+                  <option value="ZONA 8">Comunidad 8 Sur Occidente</option>
+                  <option value="ZONA 9">Comunidad 9 La Pedregrosa</option>
+                  <option value="ZONA 10">Comunidad 10 La Provenza</option>
+                  <option value="ZONA 11">Comunidad 11 Sur</option>
+                  <option value="ZONA 12">Comunidad 12 Cabecera del llano</option>
+                  <option value="ZONA 13">Comunidad 13 Oriental</option>
+                  <option value="ZONA 14">Comunidad 14 Morrorico</option>
+                  <option value="ZONA 15">Comunidad 15 Centro</option>
+                  <option value="ZONA 16">Comunidad 16 Lagos del Cacique</option>
+                  <option value="ZONA 17">Comunidad 17 Mutis</option>
+                </select>          
+              </div>
+              <div class="form-group">
+                <label for="typeUser">Tipo de Usuario</label>
+                <select class="form-control" id="typeUser" required>
+                  <option value="">Seleccione el tipo de usuario</option>
+                  <option value="COORD">Coordinador</option>
+                  <option value="ASE">Asesor Comercial</option>
+                </select>          
+              </div>
+              <div class="form-group">
+                <label for="passwordUser">Contraseña</label>
+                <input
+                  type="password"
+                  class="form-control"
+                  id="passwordUser"
+                  name="passwordUser"
+                  placeholder="Contraseña"
+                  required
+                />
+              </div>
+              <div class="modal-footer">
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  data-dismiss="modal"
+                >
+                  Close
+                </button>
+                <button type="submit" class="btn btn-primary">Send message</button>
+              </div>        
+            </form>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+
+  </body>
+  <script
+    src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"
+  ></script>
+  <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
+  <script src="js/tableUsers.js"></script>
+</html>

@@ -9,7 +9,7 @@ $(document).ready(function(){
             alert('Por favor llene todos los campos')
         }else{
             $.get(get+emailUser.value+'/'+passwordUser.value, function(data){            
-                if(data.name != "NO DEFINIDO"){
+                if(data.name != null){
                     alert("Bienvenido "+data.name)
                     window.location.href = "index.html"
                 }else{
