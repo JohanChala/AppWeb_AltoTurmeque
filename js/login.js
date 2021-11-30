@@ -6,14 +6,14 @@ $(document).ready(function(){
     $("#btnEnviar").click(function(e){
         e.preventDefault()
         if(emailUser.value == '' || passwordUser.value == ''){
-            alert('Por favor llene todos los campos')
+            alertify.error('Por favor llene todos los campos')
         }else{
             $.get(get+emailUser.value+'/'+passwordUser.value, function(data){            
                 if(data.name != null){
                     alert("Bienvenido "+data.name)
                     window.location.href = "index.html"
                 }else{
-                    alert("Cuenta asociada a la combinación email/contraseña no existe")
+                    alertify.error("Cuenta asociada a la combinación email/contraseña no existe")
                 }
             })
         }
