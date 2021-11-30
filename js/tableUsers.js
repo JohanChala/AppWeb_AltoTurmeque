@@ -99,8 +99,8 @@ on(document,'click','.btnBorrar',e=>{
         fetch(del+id,{method:'DELETE'})
             .then(function(response){
                 console.log(response)
-                if(response.ok){                    
-                    location.reload()
+                if(response.ok){
+                    alertify.alert('AltoTurmequeApp','Usuario borrado correctamente!!!', function(){ location.reload() });                                                            
                 }else{
                     alertify.error('Error al eliminar')
                 }                  
@@ -137,10 +137,9 @@ formArticulo.addEventListener('submit',e=>{
                 password:passwordUser.value
             })
         }).then(function(response){
-            if(response.ok){
-                alertify.success('Registro creado')
+            if(response.ok){                
                 modalUser.hide()
-                location.reload()
+                alertify.alert('AltoTurmequeApp','Usuario creado correctamente!!!', function(){ location.reload() });                    
             }else{
                 alertify.error('Error al crear')
             }
@@ -168,9 +167,9 @@ formArticulo.addEventListener('submit',e=>{
             })
         }).then(function(response){
             if(response.ok){
-                alertify.success('Registro editado')
+                
                 modalUser.hide()
-                location.reload()
+                alertify.alert('AltoTurmequeApp','Usuario editado correctamente!!!', function(){ location.reload() });                    
             }else{
                 alertify.error('Error al editar')
             }
