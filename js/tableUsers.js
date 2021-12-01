@@ -2,7 +2,7 @@ const get = 'http://152.70.213.228:8080/api/user/all'
 const get1 = 'http://152.70.213.228:8080/api/user/emailexist/'
 const post = 'http://152.70.213.228:8080/api/user/new'
 const put = 'http://152.70.213.228:8080/api/user/update'
-const del = 'http://152.70.213.228:8080/api/user/delete/'
+const del = 'http://152.70.213.228:8080/api/user/'
 
 
 //Obtnemos los datos desdel el modal
