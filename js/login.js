@@ -10,7 +10,7 @@ $(document).ready(function(){
         }else{
             $.get(get+emailUser.value+'/'+passwordUser.value, function(data){            
                 if(data.name != null){
-                    alertify.alert('AltoTurmequeApp', 'Bienvenido '+data.name, function(){ window.location.href = "index.html" });
+                    alertify.alert('AltoTurmequeApp', 'Bienvenido '+data.name, function(){ window.location.href = "home.html" });
                     
                 }else{
                     alertify.error("Cuenta asociada a la combinación email/contraseña no existe")

@@ -24,14 +24,38 @@
     <title>Administrador de Usarios</title>
   </head>
   <body>
+    <header class="header">
+      <nav class="nav">
+        <a href="home.html" class="logo nav-link"><img src="img/LogoEmpresa.png" class="nav-img"></a>
+        <ul class="nav-menu">
+          <li class="nav-menu-item">
+            <a href="tableUsers.html" class="nav-menu-link nav-link"
+              >Usuarios</a
+            >
+          </li>
+          <li class="nav-menu-item">
+            <a href="tableClothes.html" class="nav-menu-link nav-link"
+              >Inventario</a
+            >
+          </li>
+          <li class="nav-menu-item">
+            <li class="nav-menu-item"><a href="index.html" class="nav-link">Salir</a></li> 
+          </li>
+        </ul>
+      </nav>
+    </header>
     <section class="form-generic" class="container">
-    <button
-      id="btnCreate"
-      type="button"
-      class="btn btn-primary"
-      data-toggle="modal"> Crear Usuario</button>
-    <br> <br>
-    <!--Tabla de datos-->
+      <button
+        id="btnCreate"
+        type="button"
+        class="btn btn-primary"
+        data-toggle="modal"
+      >
+        Crear Usuario
+      </button>
+      <br />
+      <br />
+      <!--Tabla de datos-->
       <table class="table table-dark" id="usersDataTable">
         <thead>
           <tr>
@@ -50,7 +74,7 @@
       </table>
     </section>
 
-    <!--Modal Crear o Editar Usuario-->    
+    <!--Modal Crear o Editar Usuario-->
     <div
       class="modal fade"
       id="modalUser"
@@ -77,23 +101,23 @@
               <div class="form-group">
                 <label for="identificationUser">Nº Identificación</label>
                 <input
-                    type="text"
-                    class="form-control"
-                    id="identificationUser"
-                    name="identificationUser"
-                    placeholder="Nº Identificación"
-                    required
-                />               
+                  type="text"
+                  class="form-control"
+                  id="identificationUser"
+                  name="identificationUser"
+                  placeholder="Nº Identificación"
+                  required
+                />
               </div>
               <div class="form-group">
                 <label for="nameUser">Nombre</label>
                 <input
-                    type="text"
-                    class="form-control"
-                    id="nameUser"
-                    name="nameUser"
-                    placeholder="Nombre"
-                    required
+                  type="text"
+                  class="form-control"
+                  id="nameUser"
+                  name="nameUser"
+                  placeholder="Nombre"
+                  required
                 />
               </div>
               <div class="form-group">
@@ -144,13 +168,17 @@
                   <option value="ZONA 9">Comunidad 9 La Pedregrosa</option>
                   <option value="ZONA 10">Comunidad 10 La Provenza</option>
                   <option value="ZONA 11">Comunidad 11 Sur</option>
-                  <option value="ZONA 12">Comunidad 12 Cabecera del llano</option>
+                  <option value="ZONA 12">
+                    Comunidad 12 Cabecera del llano
+                  </option>
                   <option value="ZONA 13">Comunidad 13 Oriental</option>
                   <option value="ZONA 14">Comunidad 14 Morrorico</option>
                   <option value="ZONA 15">Comunidad 15 Centro</option>
-                  <option value="ZONA 16">Comunidad 16 Lagos del Cacique</option>
+                  <option value="ZONA 16">
+                    Comunidad 16 Lagos del Cacique
+                  </option>
                   <option value="ZONA 17">Comunidad 17 Mutis</option>
-                </select>          
+                </select>
               </div>
               <div class="form-group">
                 <label for="typeUser">Tipo de Usuario</label>
@@ -158,7 +186,7 @@
                   <option value="">Seleccione el tipo de usuario</option>
                   <option value="COORD">Coordinador</option>
                   <option value="ASE">Asesor Comercial</option>
-                </select>          
+                </select>
               </div>
               <div class="form-group">
                 <label for="passwordUser">Contraseña</label>
@@ -179,15 +207,15 @@
                 >
                   Close
                 </button>
-                <button type="submit" class="btn btn-primary">Send message</button>
-              </div>        
+                <button type="submit" class="btn btn-primary">
+                  Send message
+                </button>
+              </div>
             </form>
           </div>
-          
         </div>
       </div>
     </div>
-
   </body>
   <script
     src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
