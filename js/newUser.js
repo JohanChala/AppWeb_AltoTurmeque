@@ -1,5 +1,5 @@
 const post ='http://152.70.213.228:8080/api/user/new'
-const get ='http://152.70.213.228:8080/api/user/'
+const get ='http://152.70.213.228:8080/api/user/emailexist'
 const emailUser= document.getElementById('emailUser')
 const passwordUser= document.getElementById('passwordUser')
 const passwordUserTwo= document.getElementById('passwordUserTwo') 
